@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVASC - JavaScript Öğrenme Platformu</title>
+    <!-- Stil Dosyamız -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Prism.js Kod Renklendirme Teması -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" />
+</head>
+<body>
+
+    <!-- TOAST BİLDİRİM ALANI (Sağ üst köşe) -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- GİRİŞ / KAYIT EKRANI -->
+    <section id="auth-screen" class="congrats-container">
+        <div class="congrats-card">
+            <h1>⚡ AVASC'a Hoş Geldin</h1>
+            <p>Kodlama macerasına başlamak için hesabını oluştur!</p>
+            <br>
+            <form id="register-form" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label>Kullanıcı Adı:</label>
+                    <input type="text" id="reg-name" placeholder="İsmini yaz..." required>
+                </div>
+                <div class="form-group">
+                    <label>Şifre:</label>
+                    <input type="password" id="reg-password" placeholder="Şifreni belirle..." required>
+                </div>
+                <button type="submit" class="btn primary full-width">Kayıt Ol ve Oyuna Başla 🚀</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- OYUN ALANI -->
+    <div id="game-wrapper" style="display: none; height: 100vh; flex-direction: column;">
+        <!-- Üst Başlık (Header) -->
+        <header class="navbar">
+            <div class="logo-area">
+                <div class="logo">⚡ AVASC</div>
+                <span class="ai-badge">AI ile yapılmıştır</span>
+            </div>
+            <div class="stats">
+                <span>Hesap: <strong id="username-display">Misafir</strong></span>
+                <span id="level-btn-indicator" style="cursor: pointer;" title="Bölümleri görmek için tıkla!">Bölüm: <strong id="level-count">1 / 2</strong></span>
+            </div>
+        </header>
+
+        <!-- Ana Çalışma Alanı (Split Screen) -->
+        <main class="main-container">
+            <section class="editor-section">
+                <div class="file-tab">
+                    <span>index.js</span>
+                    <small>(Kaydetmek ve Kontrol Etmek için: Ctrl + S)</small>
+                </div>
+                <textarea id="code-input" placeholder="// Kodunu buraya yaz..."></textarea>
+                
+                <div class="editor-footer">
+                    <button id="run-btn" class="btn primary">Kontrol Et (Ctrl + S)</button>
+                </div>
+            </section>
+
+            <section class="guide-section">
+                <h2 id="lesson-title">Ders Yükleniyor...</h2>
+                <div id="lesson-content" class="content-box"></div>
+
+                <div id="feedback-box" class="feedback"></div>
+
+                <div class="action-buttons">
+                    <button id="next-btn" class="btn success" disabled>Sıradaki Konuya Geç ➔</button>
+                    <button id="retry-btn" class="btn warning">Tekrarla / Sıfırla 🔄</button>
+                    <button id="home-btn" class="btn danger">Ana Ekran 🏠</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- BÖLÜM LİSTESİ MODALI -->
+    <div id="modal-screen" class="congrats-container" style="display: none;">
+        <div class="congrats-card">
+            <h2>📚 Bölüm Listesi</h2>
+            <div id="lesson-list-container" style="margin: 20px 0; text-align: left; max-height: 200px; overflow-y: auto;"></div>
+            <button onclick="closeModal()" class="btn primary full-width">Kapat</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Kütüphaneleri ve Dosyalarımız -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="lessons.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

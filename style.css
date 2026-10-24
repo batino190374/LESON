@@ -1,0 +1,272 @@
+/* Genel Ayarlar ve Renk Değişkenleri */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #181825;
+    color: #cdd6f4;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Üst Bar (Navbar) */
+.navbar {
+    background-color: #11111b;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #313244;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #89b4fa;
+    letter-spacing: 1px;
+}
+
+.ai-badge {
+    font-size: 0.7rem;
+    background-color: #313244;
+    color: #f9e2af;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #f9e2af55;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.stats span {
+    margin-left: 20px;
+    font-size: 0.95rem;
+    background-color: #1e1e2e;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #45475a;
+}
+
+.stats strong {
+    color: #a6e3a1;
+}
+
+/* Split Screen */
+.main-container {
+    display: flex;
+    flex: 1;
+    height: calc(100vh - 55px);
+}
+
+.editor-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e2e;
+    border-right: 2px solid #313244;
+}
+
+.file-tab {
+    background-color: #181825;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    color: #89b4fa;
+    border-bottom: 1px solid #313244;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file-tab small {
+    color: #a6adc8;
+}
+
+#code-input {
+    flex: 1;
+    background-color: #1e1e2e;
+    color: #f38ba8;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    padding: 16px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.editor-footer {
+    padding: 12px 16px;
+    background-color: #181825;
+    border-top: 1px solid #313244;
+    text-align: right;
+}
+
+.guide-section {
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #11111b;
+    overflow-y: auto;
+}
+
+#lesson-title {
+    color: #f9e2af;
+    font-size: 1.4rem;
+}
+
+.content-box {
+    background-color: #1e1e2e;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #313244;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.feedback {
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    display: none;
+}
+
+.feedback.success-msg {
+    display: block;
+    background-color: #274135;
+    color: #a6e3a1;
+    border: 1px solid #a6e3a1;
+}
+
+.feedback.error-msg {
+    display: block;
+    background-color: #422533;
+    color: #f38ba8;
+    border: 1px solid #f38ba8;
+}
+
+.action-buttons {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn.primary { background-color: #89b4fa; color: #11111b; }
+.btn.success { background-color: #a6e3a1; color: #11111b; }
+.btn.warning { background-color: #f9e2af; color: #11111b; }
+.btn.danger { background-color: #f38ba8; color: #11111b; }
+
+/* Modal & Kayıt Ekranı */
+.congrats-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(24, 24, 37, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.congrats-card {
+    background-color: #1e1e2e;
+    padding: 40px;
+    border-radius: 12px;
+    border: 2px solid #313244;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.congrats-card h1 {
+    color: #89b4fa;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #89b4fa;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #45475a;
+    background-color: #11111b;
+    color: #fff;
+    outline: none;
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Toast Bildirimleri */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border-left: 4px solid #89b4fa;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    font-size: 0.9rem;
+    min-width: 250px;
+}
+
+.toast.success { border-left-color: #a6e3a1; }
+.toast.error { border-left-color: #f38ba8; }
+
+.section-footer-ai {
+    margin-top: 15px;
+    font-size: 0.75rem;
+    color: #6c7086;
+}
