@@ -326,7 +326,7 @@ const lessons = [
     },
     {
         id: 20,
-        title: "20. Bolum: Final - AVASC Uzmani",
+        title: "20. Bolum: Final - LESON Uzmani",
         content: `
             <p>Tebrikler Coder! Son gorevdesin. JavaScript'te degisken tanimlamanin en temel yolunu tekrarla ve bu platformu bitir.</p><br>
             <p><strong>Ornek Kullanim:</strong></p>
