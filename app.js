@@ -64,8 +64,8 @@ function loadLesson(index) {
     if (!lesson) {
         lessonTitleEl.innerText = "🏆 TEBRIKLER " + loggedInUser.toUpperCase() + "!";
         lessonContentEl.innerHTML = `
-            <p>AVASC temel JavaScript modulundeki tum bolumleri basariyla tamamladin! Harika bir is cikardin.</p>
-            <div class="section-footer-ai">⚡ Bu platform AVASC & AI is birligiyle yapilmistir.</div>
+            <p>LESON temel JavaScript modulundeki tum bolumleri basariyla tamamladin! Harika bir is cikardin.</p>
+            <div class="section-footer-ai">⚡ Bu site AVASC tarafından değildir.AI tarafından yaratılmıştır.</div>
         `;
         codeInputEl.value = "// Tum bolumler bitti!";
         codeInputEl.disabled = true;
